@@ -70,7 +70,6 @@ name = "adamm"
 tags = [ "web", "pwn", "guessing" ]
 link = "https://twitter.com/adamsimuntis"
 
-
 [[current]]
 name = "Anony"
 tags = [ "web", "misc", "ppc" ]
@@ -118,6 +117,14 @@ name = "Tacet"
 
 [[current]]
 name = "terjanq"
+
+[[current]]
+name = "Eternal"
+tags = [ "pwn", "crypto" ]
+link = "https://eternal.red"
+
+[[current]]
+name = "nikoshell"
 
 # Former
 [[former]]
