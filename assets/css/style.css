@@ -212,15 +212,15 @@ body {
 }
 
 .member-list li{
-  width: 250px;
-  min-height: 250px;
+  width: 160px;
+  min-height: 190px;
   display:block;
 }
 
 .blank-avatar, .avatar {
-  width: 200px;
-  min-height: 200px;
-  margin:10px;
+  width:140px;
+  height:140px;
+  margin:5px 0;
   display:block;
   border: 1px solid var(--background-accented);
 }
