@@ -9,13 +9,27 @@
 <ul class="member-list">
     {{ range .Site.Data.members.current }}
     <li>
-        <h4 class="member-name">
-            {{- if .link }}<a href="{{ .link }}"><u>{{ .name }}</u></a>{{ else }}{{ .name }}{{ end -}}
-        </h4>
-        <div class="member-tags">
-            {{- range .tags }}<span class="tag tag-{{ . }}">{{ . }}</span>{{ end -}}
-        </div>
-        <p class="member-desc">{{ .bio | markdownify }}</p>
+      {{ $avatar := printf "avatars/%s.png" .name  }}
+      {{ $image := resources.Get $avatar }}
+      {{- if $image }}
+        {{ $image := $image.Process "fit 200x200" }}
+        {{- if .link }}
+          <a href="{{ .link }}">
+            <img class="avatar" src="{{ $image.RelPermalink }}" />
+          </a>
+        {{ else }}
+          <img class="avatar" src="{{ $image.RelPermalink }}" />
+        {{ end -}}
+      {{ else }}
+        <img class="blank-avatar" src="/blank_avatar.png" alt="No avatar image" />
+      {{end -}}
+      <h4 class="member-name">
+          {{- if .link }}<a href="{{ .link }}"><u>{{ .name }}</u></a>{{ else }}{{ .name }}{{ end -}}
+      </h4>
+      <div class="member-tags">
+          {{- range .tags }}<span class="tag tag-{{ . }}">{{ . }}</span>{{ end -}}
+      </div>
+      <p class="member-desc">{{ .bio | markdownify }}</p>
     </li>
     {{ end }}
 </ul>
