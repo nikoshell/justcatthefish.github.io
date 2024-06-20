@@ -120,12 +120,13 @@ name = "terjanq"
 
 [[current]]
 name = "Eternal"
-tags = [ "pwn", "crypto" ]
+tags = [ "pwn" ]
 link = "https://eternal.red"
 
 [[current]]
 name = "nikoshell"
 link = "https://github.com/nikoshell/"
+gravatar = "3aecd7dd480bf54dd324d4ac2b3f4b094f12138b7fb38cf6118f2eadeb93d661"
 
 [[current]]
 name = "foxtrot_charlie"

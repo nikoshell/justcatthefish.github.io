@@ -9,19 +9,23 @@
 <ul class="member-list">
     {{ range .Site.Data.members.current }}
     <li>
-      {{ $avatar := printf "avatars/%s.png" .name  }}
-      {{ $image := resources.Get $avatar }}
-      {{- if $image }}
-        {{ $image := $image.Process "fit 200x200" }}
-        {{- if .link }}
-          <a href="{{ .link }}">
-            <img class="avatar" src="{{ $image.RelPermalink }}" />
-          </a>
-        {{ else }}
+      {{- if .gravatar }}
+        <a href="{{ .link }}">
+          {{ $avatar := printf "https://gravatar.com/avatar/%s.jpg?s=142" .gravatar }}
+          {{ $image := resources.GetRemote $avatar}}
           <img class="avatar" src="{{ $image.RelPermalink }}" />
-        {{ end -}}
+        </a>
       {{ else }}
-        <img class="blank-avatar" src="/blank_avatar.png" alt="No avatar image" />
+        {{ $avatar := printf "avatars/%s.png" .name  }}
+        {{ $image := resources.Get $avatar }}
+        {{- if $image }}
+          {{ $image := $image.Process "fit 200x200" }}
+            <a href="{{ .link }}">
+              <img class="avatar" src="{{ $image.RelPermalink }}" />
+            </a>
+        {{ else }}
+          <img class="blank-avatar" src="/blank_avatar.png" alt="No avatar image" />
+        {{end -}}
       {{end -}}
       <h4 class="member-name">
           {{- if .link }}<a href="{{ .link }}"><u>{{ .name }}</u></a>{{ else }}{{ .name }}{{ end -}}
