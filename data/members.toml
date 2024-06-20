@@ -36,7 +36,7 @@ link = "https://embe221ed.dev"
 
 [[current]]
 name = "MrQubo"
-tags = [ "crypto", "ppc", "misc", "guessing" ]
+tags = [ "crypto", "ppc", "misc" ]
 bio = "Doing this one challenge for the whole CTF."
 link = "https://is.gd/WVZvnI"
 
