@@ -296,9 +296,6 @@ body {
 	vertical-align: 0.1em;
 	user-select: none;
 }
-.tag:first-child {
-	margin-left: 4px;
-}
 
 /* temporarily left here, built dynamically */
 /* .tag-rank {
